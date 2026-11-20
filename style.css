@@ -1,5 +1,4 @@
-/* Twin Cities Animal Rescue
-   Color palette:
+/* Color palette:
    Dark blue: #0B1F3A
    Rescue green: #2F855A
    Warm cream: #F4F1EA
@@ -18,14 +17,14 @@ body {
     line-height: 1.6;
 }
 
-/* Header, centered logo, and navigation */
+/* This helps me with Header elements and navigation */
 
 header {
+    background-color: #0B1F3A;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1.5rem 1rem 1rem;
-    background-color: #0B1F3A;
 }
 
 header > a img {
@@ -62,7 +61,7 @@ nav a[aria-current="page"] {
     outline: none;
 }
 
-/* Main page content */
+/* Page content */
 
 main {
     width: 90%;
@@ -109,8 +108,6 @@ article {
     background-color: #F4F1EA;
 }
 
-/* Images and video */
-
 img,
 video {
     display: block;
@@ -156,7 +153,7 @@ li {
     margin-bottom: 0.5rem;
 }
 
-/* Form styling */
+/* Form */
 
 form {
     max-width: 700px;
@@ -242,17 +239,17 @@ footer a {
     color: #FFFFFF;
 }
 
-/* Larger-screen responsive layout */
+/* Larger-screen layout */
 
 @media (min-width: 700px) {
     header {
-        flex-direction: column;
-        align-items: center;
-        padding: 1.5rem 5% 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 5%;
     }
 
     header > a img {
-        margin-bottom: 1rem;
+        margin-bottom: 0;
     }
 
     nav ul {
