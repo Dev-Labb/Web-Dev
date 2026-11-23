@@ -1,8 +1,9 @@
-/* Color palette:
+/* Twin Cities Animal Rescue color palette:
    Dark blue: #0B1F3A
    Rescue green: #2F855A
    Warm cream: #F4F1EA
    White: #FFFFFF
+   Error red: #A61B1B
 */
 
 * {
@@ -17,19 +18,19 @@ body {
     line-height: 1.6;
 }
 
-/* This helps me with Header elements and navigation */
+/* Header, logo, and navigation */
 
 header {
-    background-color: #0B1F3A;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1.5rem 1rem 1rem;
+    background-color: #0B1F3A;
 }
 
 header > a img {
     display: block;
-    width: 200px;
+    width: 230px;
     max-width: 100%;
     height: auto;
     margin-bottom: 1rem;
@@ -61,7 +62,7 @@ nav a[aria-current="page"] {
     outline: none;
 }
 
-/* Page content */
+/* Main content */
 
 main {
     width: 90%;
@@ -108,6 +109,8 @@ article {
     background-color: #F4F1EA;
 }
 
+/* Images, video, and figure */
+
 img,
 video {
     display: block;
@@ -132,7 +135,7 @@ figcaption {
     text-align: center;
 }
 
-/* Links */
+/* Links and lists */
 
 main a,
 footer a {
@@ -147,13 +150,11 @@ footer a:focus {
     color: #0B1F3A;
 }
 
-/* Lists */
-
 li {
     margin-bottom: 0.5rem;
 }
 
-/* Form */
+/* Form styling */
 
 form {
     max-width: 700px;
@@ -222,6 +223,57 @@ button:focus {
     outline-offset: 2px;
 }
 
+/* Touchstone 4 interactive feature */
+
+.interest-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.interest-button {
+    width: 100%;
+}
+
+.selected-interest {
+    background-color: #0B1F3A;
+    outline: 3px solid #2F855A;
+    outline-offset: 2px;
+}
+
+#interest-result {
+    padding: 1rem;
+    border-left: 5px solid #2F855A;
+    background-color: #F4F1EA;
+}
+
+.error-message {
+    margin-top: -0.5rem;
+    color: #A61B1B;
+    font-weight: bold;
+}
+
+.form-success-status {
+    padding: 1rem;
+    border-left: 5px solid #2F855A;
+    background-color: #E4F4E8;
+    color: #0B1F3A;
+    font-weight: bold;
+}
+
+.form-error-status {
+    padding: 1rem;
+    border-left: 5px solid #A61B1B;
+    background-color: #FCE8E8;
+    color: #A61B1B;
+    font-weight: bold;
+}
+
+[aria-invalid="true"] {
+    border: 2px solid #A61B1B;
+}
+
 /* Footer */
 
 footer {
@@ -239,17 +291,11 @@ footer a {
     color: #FFFFFF;
 }
 
-/* Larger-screen layout */
+/* Larger-screen responsive layout */
 
 @media (min-width: 700px) {
     header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem 5%;
-    }
-
-    header > a img {
-        margin-bottom: 0;
+        padding: 1.5rem 5% 1rem;
     }
 
     nav ul {
@@ -270,18 +316,26 @@ footer a {
         padding: 2rem;
     }
 
-    section:has(article) {
+    .help-options {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
     }
 
-    section:has(article) h2 {
+    .help-options h2 {
         width: 100%;
     }
 
-    section:has(article) article {
+    .help-options article {
         flex: 1 1 250px;
         margin: 0;
+    }
+
+    .interest-buttons {
+        flex-direction: row;
+    }
+
+    .interest-button {
+        flex: 1;
     }
 }
